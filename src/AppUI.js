@@ -1,33 +1,35 @@
-import { TodoCounter } from './Components/TodoCounter'; 
-import { TodoSearch } from './Components/TodoSearch'; 
-import { TodoList } from './Components/TodoList'; 
+import { TodoCounter } from './Components/TodoCounter';
+import { TodoSearch } from './Components/TodoSearch';
+import { TodoList } from './Components/TodoList';
 import { TodoItem } from './Components/TodoItem';
-import { TodosLoading } from './Components/TodosLoading'; 
+import { TodosLoading } from './Components/TodosLoading';
 import { TodosError } from './Components/TodosError';
-import { EmptyTodos } from './Components/EmptyTodos'; 
+import { EmptyTodos } from './Components/EmptyTodos';
 import { CreateTodoButton } from './Components/CreateTodoButton';
+import { TodoForm } from './Components/TodoForm'; 
+import { Modal } from './TodoModal'; 
+import { TodoContext } from './Components/TodoContext';
+import React from 'react';
 
-function AppUI({
+function AppUI() {
 
-    loading,
-    error,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo,
+    const {
 
-}) {
+        loading,
+        error,
+        searchedTodos,
+        completeTodo,
+        deleteTodo,
+        openModal,
+        setOpenModal,
+
+    } = React.useContext(TodoContext);
+
     return (
         <>
 
-            <TodoCounter completed={completedTodos} total={totalTodos} />
-            <TodoSearch
-                searchValue={searchValue}
-                setSearchValue={setSearchValue}
-            />
+            <TodoCounter />
+            <TodoSearch />
 
             <TodoList>
                 {loading && <TodosLoading />}
@@ -46,6 +48,12 @@ function AppUI({
             </TodoList>
 
             <CreateTodoButton />
+
+            {openModal && (
+                <Modal>
+                    <TodoForm />
+                </Modal>
+            )}
 
         </>
     );

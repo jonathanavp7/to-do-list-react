@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jonathanavp7/to-do-list-react/static/css/main.2b0c4577.css",
+    "main.js": "/jonathanavp7/to-do-list-react/static/js/main.ebf172d2.js",
+    "index.html": "/jonathanavp7/to-do-list-react/index.html",
+    "main.2b0c4577.css.map": "/jonathanavp7/to-do-list-react/static/css/main.2b0c4577.css.map",
+    "main.ebf172d2.js.map": "/jonathanavp7/to-do-list-react/static/js/main.ebf172d2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b0c4577.css",
+    "static/js/main.ebf172d2.js"
+  ]
+}

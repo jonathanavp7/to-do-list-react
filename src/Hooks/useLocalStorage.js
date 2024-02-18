@@ -47,12 +47,11 @@ function useLocalStorage(itemName, initialValue) {
 
 export { useLocalStorage };
 
-// const defaultTodos = [
-//   { text: 'Aprender React Js', completed: false },
-//   { text: 'Perfeccionar Portfolio', completed: false },
-//   { text: 'Encontrar chamba', completed: false },
-//   { text: 'Ganar billete', completed: false },
-//   { text: 'Salir del pino', completed: false },
-// ];
+const defaultTodos = [
+  { text: 'Aprender React Js', completed: false },
+  { text: 'Perfeccionar Portfolio', completed: false },
+  { text: 'Encontrar Chamba', completed: false },
+  { text: 'Ganar Dinero', completed: false },
+];
 
-// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
+localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));

@@ -12,7 +12,7 @@ This repository contains a simple To Do List application built with React.js.
 
 The repository is currently deployed and accessible [here](https://jonathanavp7.github.io/to-do-list-react/). 
 
-## Technologies used in this project
+## Technologies
 
 - HTML
 - CSS

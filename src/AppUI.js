@@ -21,7 +21,7 @@ function AppUI() {
         completeTodo,
         deleteTodo,
         openModal,
-        setOpenModal,
+        undoTodo,
 
     } = React.useContext(TodoContext);
 
@@ -34,7 +34,7 @@ function AppUI() {
             <TodoList>
                 {loading && <TodosLoading />}
                 {error && <TodosError />}
-                {(!loading && searchedTodos.length == 0) && <EmptyTodos />}
+                {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
 
                 {searchedTodos.map(todo => (
                     <TodoItem
@@ -42,6 +42,7 @@ function AppUI() {
                         text={todo.text}
                         completed={todo.completed}
                         onComplete={() => completeTodo(todo.text)}
+                        undoTodo={() => undoTodo(todo.text)}
                         onDelete={() => deleteTodo(todo.text)}
                     />
                 ))}

@@ -46,6 +46,15 @@ function TodoProvider({ children }) {
         saveTodos(newTodos);
     }
 
+    const undoTodo = (text) => {
+        const newTodos = [...todos];
+        const todoIndex = newTodos.findIndex(
+            (todo) => todo.text == text
+        );
+        newTodos[todoIndex].completed = false;
+        saveTodos(newTodos);
+    }
+
     const deleteTodo = (text) => {
         const newTodos = [...todos];
         const todoIndex = newTodos.findIndex(
@@ -65,6 +74,7 @@ function TodoProvider({ children }) {
             setSearchValue,
             searchedTodos,
             completeTodo,
+            undoTodo,
             deleteTodo,
             openModal,
             setOpenModal,

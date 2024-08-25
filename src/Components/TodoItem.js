@@ -6,7 +6,7 @@ function TodoItem(props) {
     return (
         <li className="TodoItem">
             <span className={`Icon Icon-check ${props.completed && "Icon-check--active"}`} onClick={props.completed ? props.undoTodo : props.onComplete}><FaCircleCheck className="Check" /></span>
-            <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>{props.text}</p>
+            <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`} onClick={props.completed ? props.undoTodo : props.onComplete}>{props.text}</p>
             <span className="Icon Icon-delete" onClick={props.onDelete}><IoClose /></span>
         </li>
     );
